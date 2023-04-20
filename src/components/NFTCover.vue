@@ -15,6 +15,16 @@
       @play="handleMediaLoad"
       @error="handleVideoError"
     />
+    <video
+      v-if="isShowVideo"
+      autoplay
+      muted
+      loop
+      v-bind="imgProps"
+      :src="videoSrc"
+      @play="handleImageLoad"
+      @error="handleImageError"
+    />
     <img
       v-else-if="isShowImage"
       v-bind="imgProps"
