@@ -77,7 +77,7 @@
               :nft-image-url="NFTImageUrl"
               :creator-message="creatorMessage"
               :iscn-owner="iscnOwner"
-              @click-collect-from-cta="handleCollectFromCTA_exp"
+              @click-collect-from-cta="handleCollectFromCTA"
             />
             <NFTPagePriceSection
               v-if="isShowPriceSection && nftIsPrimitive"
