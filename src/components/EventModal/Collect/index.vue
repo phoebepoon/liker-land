@@ -138,7 +138,10 @@
     </template>
 
     <template v-if="!uiTxNFTStatus">
-      <div class="flex flex-col items-start mb-[28px]">
+      <section
+        v-if="paymentMethod === undefined"
+        class="flex flex-col items-start mb-[28px]"
+      >
         <Separator class="h-[2px] bg-shade-gray self-center phone:hidden" />
         <Label
           preset="p6"
@@ -158,9 +161,11 @@
             @input="onInputCollectMessage"
           >
         </div>
-      </div>
+      </section>
+
       <section v-if="paymentMethod === undefined">
         <Label
+          v-if="IS_TESTNET"
           class="text-like-green"
           preset="h5"
           align="center"
@@ -169,6 +174,7 @@
         <ul class="mt-[16px] flex flex-col gap-[16px] mx-auto max-w-[320px] w-full">
           <li>
             <EventModalCollectMethodButton
+              v-if="IS_TESTNET"
               :class="{ 'border-like-cyan': canPayByFiat && !hasConnectedWallet }"
               :title="$t('nft_collect_modal_method_stripe')"
               type="stripe"
@@ -238,6 +244,8 @@ import { formatNumberWithLIKE } from '~/util/ui';
 
 import clipboardMixin from '~/mixins/clipboard';
 import nftMixin from '~/mixins/nft';
+
+import { IS_TESTNET } from '~/constant';
 
 const FOLLOW_PROMPT_STATE = {
   DEFAULT: 'default', // No need to show any follow UI.
