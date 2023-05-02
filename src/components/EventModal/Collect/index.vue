@@ -165,7 +165,7 @@
 
       <section v-if="paymentMethod === undefined">
         <Label
-          v-if="IS_TESTNET"
+          v-if="enableStripe"
           class="text-like-green"
           preset="h5"
           align="center"
@@ -174,7 +174,7 @@
         <ul class="mt-[16px] flex flex-col gap-[16px] mx-auto max-w-[320px] w-full">
           <li>
             <EventModalCollectMethodButton
-              v-if="IS_TESTNET"
+              v-if="enableStripe"
               :class="{ 'border-like-cyan': canPayByFiat && !hasConnectedWallet }"
               :title="$t('nft_collect_modal_method_stripe')"
               type="stripe"
@@ -306,6 +306,9 @@ export default {
       'walletIsLoggingIn',
       'walletInteractedCreators',
     ]),
+    enableStripe() {
+      return !!IS_TESTNET;
+    },
     developerMode() {
       return !!this.$route.query.debug;
     },
