@@ -591,7 +591,7 @@
   "tx_modal_quitAlert_content": "Transaction will be cancelled if network confirmations has not completed.\nThe paid gas fee cannot be refunded.",
   "tx_modal_quitAlert_continue": "Continue",
   "tx_modal_status_complete_reference_code": "Reference code",
-  "tx_modal_status_complete_text_collect": "Your collected work has arrived and is now in your {portfolio}",
+  "tx_modal_status_complete_text_collect": "Your collected work has arrived and is now in your {portfolio}",\n
   "tx_modal_status_complete_text_collect_portfolio": "your portfolio",
   "tx_modal_status_complete_text_collect_without_wallet": "You will receive an email from us soon. Please follow the instructions in the email to claim your Writing NFT.",
   "tx_modal_status_complete_text_transfer": "Your Writing NFT is successfully transferred!",
